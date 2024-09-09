@@ -102,12 +102,15 @@ phonemizer <- function (string, clean = T, simple = F, output = "Urrea") {
   string <- gsub("ü",     "ə", string)
   string <- gsub("ñ",     "ɲ", string)
   string <- gsub("d",     "θ", string)
-  string <- gsub("g",     "ɣ", string)
+  string <- gsub("g",     "ɰ", string) # velar approx.
   string <- gsub("r",     "ɻ", string)
   string <- gsub("y",     "j", string)
 
 # Eliminate non-word characters
-  if (clean == TRUE) {string <- gsub("\\W", "", string)}
+#  Old string: if (clean == TRUE) {string <- gsub("\\W", "", string)}
+   if (clean == TRUE) {string <- gsub("[^[:alnum:][:blank:]]", "", string)}
+
+
 
   # Revert values into proper IPA symbols
   if (simple == FALSE) {
@@ -130,7 +133,7 @@ phonemizer <- function (string, clean = T, simple = F, output = "Urrea") {
 
   if (output == "Smeets") {
   string <- gsub("ə",    "ɨ", string)
-  string <- gsub("ɣ",    "ɣ̞", string)
+  string <- gsub("ɰ",    "ɣ̞", string)
    }
 
   if (output == "Salas") {
@@ -141,6 +144,11 @@ phonemizer <- function (string, clean = T, simple = F, output = "Urrea") {
   string <- gsub("ə",    "ɯ", string)
   string <- gsub("f",    "v", string)
   string <- gsub("θ",    "ð", string)
+   }
+
+if (output == "HC") {
+  string <- gsub("ə",    "ɨ", string)
+  string <- gsub("ɻ",    "ʐ", string)
    }
 
   if (output == "Urrea") {
