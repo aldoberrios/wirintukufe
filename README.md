@@ -1,5 +1,5 @@
 # Wirintukufe
-This is wirintukufe, a suite of R packages to work with text in Mapudungun, the Mapuche language.
+This is Wirintukufe, a suite of R packages to work with text in Mapudungun, the Mapuche language.
 
 # Motivation
 The academic research of Mapudungun has steadily grown in the last two decades. The processing of text in Mapudungun has its difficulties due to competing standards and different types of research and methodologies. This suite of packages aims at easing those difficulties by proving functions in order to automate processes such as conversion from a text format into a phonetic writing based on the phonological descriptions available.
